@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 
 import sait.mms.problemdomain.Hatchback;
@@ -259,7 +260,25 @@ public class DriveMastersManager {
 			menu();
 		}
 		private void randomVehicleList() {
-			
+			//gets user to input number of movies they want in a list. selects movies from master list randomly
+			Scanner userInput = new Scanner(System.in);
+			System.out.println("\nEnter number of vehicles: ");
+			int numberOfVehicles = Integer.parseInt(userInput.nextLine());
+			ArrayList<Vehicle> randomVehicleList = vehicles;
+			userInput.close();
+			System.out.println("/nRandom Vehicles:");
+			for(int count = 0; count < numberOfVehicles; count++)
+			{
+				Random rand = new Random();
+				int randomIndex = rand.nextInt(randomVehicleList.size());
+				Vehicle currentVehicle = randomVehicleList.get(randomIndex);
+				randomVehicleList.remove(randomIndex);
+				currentVehicle.toString();
+				System.out.println();
+				
+				
+			}
+			menu();
 		}
 		private void menu() {
 			System.out.println("Welcome to DriveMasters");
