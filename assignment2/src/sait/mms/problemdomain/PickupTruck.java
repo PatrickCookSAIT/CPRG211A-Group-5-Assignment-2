@@ -26,7 +26,7 @@ public class PickupTruck extends Vehicle{
 	//constructor
 	
 	//CarID;VehicleType;Subtype;Speed;Fuel;Seats;Year;Drivetrain;Price;Quantity;CargoBeds; CargoCapacity
-	public PickupTruck(String CarID, String VehicleType, String SubType, int Speed, double Fuel, int Seats, int Year, String Drivetrain, double Price, int Quantity, String CargoBed, int CargoCapacity) {
+	public PickupTruck(String CarID, String VehicleType, String SubType, int Speed, double Fuel, int Seats, int Year, String Drivetrain, int Price, int Quantity, String CargoBed, int CargoCapacity) {
 		setCarID(CarID);
 		setVehicleType(VehicleType);
 		setSubType(SubType);
@@ -72,3 +72,4 @@ public class PickupTruck extends Vehicle{
 	
 	
 }
+
