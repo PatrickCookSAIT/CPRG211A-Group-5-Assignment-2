@@ -41,7 +41,7 @@ public class Vehicle {
 		return SubType;
 	}
 	public void setSubType(String subType) {
-		VehicleType = subType;
+		SubType = subType;
 	}
 	public int getSpeed() {
 		return Speed;
@@ -80,6 +80,10 @@ public class Vehicle {
 		Price = price;
 	}
 	
+	
+	public String toString() {
+		return "Vehicle []";
+	}
 	//method for reducing quantity
 	public boolean vehicleSale() {
 		if (Quantity > 1) {
@@ -92,4 +96,3 @@ public class Vehicle {
 	}
 	
 }
-
