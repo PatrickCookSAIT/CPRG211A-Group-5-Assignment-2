@@ -20,7 +20,15 @@ public class DriveMastersManager {
 		private final static String FILE_NAME = "res/vehicles.txt";
 		//attributes
 		private static ArrayList<Vehicle> vehicles = new ArrayList<>();
-		private static void loadVehicleList()
+		
+		//constructor to run program
+		public DriveMastersManager() {
+			loadVehicleList();
+			menu();
+			
+		}
+		
+		private void loadVehicleList()
 		{
 			// loads file through file name. Reads in vehicles into the proper child class depending on the type of vehicle
 			File file = new File(FILE_NAME);
@@ -93,7 +101,7 @@ public class DriveMastersManager {
 		}
 		private void saveVehicleList()
 		{
-			//takes items in movie arrary list and saves it back to the .txt file
+			//takes items in vehicles array list and saves it back to the .txt file
 			try {
 				PrintWriter out = new PrintWriter(new File(FILE_NAME));
 				for(Vehicle currentVehicle : vehicles)
@@ -121,4 +129,44 @@ public class DriveMastersManager {
 				e.printStackTrace();
 			}
 		}
+		private void menu() {
+			System.out.println("Welcome to DriveMasters");
+			System.out.println("===============================");
+			System.out.println("Select one of the following:\n");
+			
+			Scanner myObj = new Scanner(System.in);
+			System.out.println("1.    Purchase Vehicle");
+			System.out.println("2.    Display Vehicles by Type");
+			System.out.println("3.    Display Vehicles by Subtype");
+			System.out.println("4.    Produce a Random List of Vehicles\n:");
+			System.out.println("5.    Save & Exit\n:");
+			String userInput = myObj.nextLine();
+			myObj.close();
+			
+			switch (userInput) 
+			{
+			case "1":
+				addMovie();
+				break;
+			case "2":
+				generateMovieListInYear();
+				break;
+			case "3":
+				generateRandomMovieList();
+				break;
+			case "4":
+				
+				break;
+			case "5":
+				saveVehicleList();
+				System.exit(0);
+				break;
+			default:
+				System.out.println("Invalid input. Please try again.\n");
+				menu();
+				break;
+			}
+		}
+		
+		
 }
