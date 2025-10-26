@@ -1,11 +1,7 @@
 package sait.mms.manager;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 import sait.mms.problemdomain.Hatchback;
 import sait.mms.problemdomain.Hybrid;
@@ -133,10 +129,10 @@ public class DriveMastersManager {
 			Scanner myObj = new Scanner(System.in);
 			System.out.println("Enter CarID: ");
 			String userInput = myObj.nextLine();
-			System.out.println(userInput);
+			
 			for(Vehicle currentVehicle : vehicles) {
 				
-				if(currentVehicle.getCarID() == userInput) {
+				if(currentVehicle.getCarID().equals(userInput)) {
 					searchSuccess = true;
 					if (currentVehicle.vehicleSale()) {
 						System.out.println("\nThe Vehicle " + currentVehicle.getVehicleType() + " " + currentVehicle.getSubType() + " has been checked out.\n");
@@ -319,6 +315,24 @@ public class DriveMastersManager {
 			}
 			
 		}
+		private void selectToString(Vehicle currentVehicle) {
+			if (currentVehicle instanceof Sedan) {
+				((Sedan) currentVehicle).toString();
+			}
+			if (currentVehicle instanceof Hatchback) {
+				((Hatchback) currentVehicle).toString();
+			}
+			if (currentVehicle instanceof SUV) {
+				((SUV) currentVehicle).toString();
+			}
+			if (currentVehicle instanceof Hybrid) {
+				((Hybrid) currentVehicle).toString();
+			}
+			if (currentVehicle instanceof PickupTruck) {
+				((PickupTruck) currentVehicle).toString();
+			}
+		}
+		
 		
 		
 }
