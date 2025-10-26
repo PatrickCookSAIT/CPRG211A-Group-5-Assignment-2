@@ -1,3 +1,5 @@
+//Patrick Cook & Jace Borden 10/26/2025
+
 package sait.mms.problemdomain;
  
 public class Hybrid extends Vehicle{
@@ -68,4 +70,5 @@ public class Hybrid extends Vehicle{
 	}
 	
 	
+
 }
