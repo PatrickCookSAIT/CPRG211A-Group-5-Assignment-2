@@ -15,7 +15,7 @@ public class Hatchback extends Vehicle{
 	//constructor
 	
 	//CarID;VehicleType;Subtype;Speed;Fuel;Seats;Year;Drivetrain;Price;Quantity;HatchType
-	public Hatchback(String CarID, String VehicleType, String SubType, int Speed, double Fuel, int Seats, int Year, String Drivetrain, double Price, int Quantity, String HatchType) {
+	public Hatchback(String CarID, String VehicleType, String SubType, int Speed, double Fuel, int Seats, int Year, String Drivetrain, int Price, int Quantity, String HatchType) {
 		setCarID(CarID);
 		setVehicleType(VehicleType);
 		setSubType(SubType);
@@ -59,3 +59,4 @@ public class Hatchback extends Vehicle{
 	
 	
 }
+
