@@ -1,3 +1,5 @@
+//Patrick Cook & Jace Borden 10/26/2025
+
 package sait.mms.problemdomain;
  
 public class Sedan extends Vehicle{
@@ -58,4 +60,5 @@ public class Sedan extends Vehicle{
 	}
 	
 	
+
 }
