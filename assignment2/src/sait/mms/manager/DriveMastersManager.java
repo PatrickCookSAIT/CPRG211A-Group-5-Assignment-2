@@ -152,10 +152,111 @@ public class DriveMastersManager {
 			menu();
 		}
 		private void displayByType() {
-					
+			boolean searchSuccess = false;
+			Scanner myObj = new Scanner(System.in);
+			System.out.println("Enter Vehicle Type (Sedan, SUV, Hatchback, Pickup Truck and Hybrid car) : ");
+			String userInput = myObj.nextLine();
+			myObj.close();
+			System.out.println("Matching vehicles:");
+			for(Vehicle currentVehicle : vehicles) {
+				if(currentVehicle.getVehicleType() == userInput.toLowerCase()) {
+					searchSuccess = true;
+					currentVehicle.toString();
+					System.out.println();
 				}
+			}
+			if (searchSuccess == false) {
+				System.out.println("No vehicle with Vehice Type " + userInput);
+			}
+			menu();
+		}
 		private void displayBySubtype() {
+			boolean searchSuccess = false;
+			Scanner myObj = new Scanner(System.in);
+			System.out.println("#     Subtype:\n");
+			System.out.println("1.    Sedan\n");
+			System.out.println("2.    Hatchback\n");
+			System.out.println("3.    SUV\n");
+			System.out.println("4.    Hybrid\n");
+			System.out.println("5.    Pickup Truck\n\n");
+			System.out.println("Enter type of vehicle:");
+			String userInput = myObj.nextLine();
+			String subtype;
+			switch (userInput) 
+			{
+			case "1":
+				System.out.println("Enter a format (L for Large/Spacious trunk, S for Small Trunk, or M for Moderate Trunk): ");
+				subtype = myObj.nextLine();
+				System.out.println("Matching vehicles:");
+				for(Vehicle currentVehicle : vehicles) {
+					if(((Sedan) currentVehicle).getTrunkSize() == subtype.toUpperCase()) {
+						searchSuccess = true;
+						currentVehicle.toString();
+						System.out.println();
+					}
+				}
+				break;
+			case "2":
+				System.out.println("Enter HatchType (S for Standard Liftgate, T for Split Liftgate, P for Power Liftgate): ");
+				subtype = myObj.nextLine();
+				System.out.println("Matching vehicles:");
+				for(Vehicle currentVehicle : vehicles) {
+					if(((Hatchback) currentVehicle).getHatchType() == subtype.toUpperCase()) {
+						searchSuccess = true;
+						currentVehicle.toString();
+						System.out.println();
+					}
+				}
+				break;
+			case "3":
+				System.out.println("Enter Drivetrain (AWD for All Wheel Drive, 4WD for Four Wheel Drive): ");
+				subtype = myObj.nextLine();
+				System.out.println("Matching vehicles:");
+				for(Vehicle currentVehicle : vehicles) {
+					if(currentVehicle.getDrivetrain() == subtype.toUpperCase()) {
+						searchSuccess = true;
+						currentVehicle.toString();
+						System.out.println();
+					}
+				}
+				break;
+			case "4":
+				System.out.println("Enter a PowerTrain (E for Series Hybrid , A for Parallel Hybrid, PHEV for Plug-in Hybrid): ");
+				subtype = myObj.nextLine();
+				System.out.println("Matching vehicles:");
+				for(Vehicle currentVehicle : vehicles) {
+					if(((Hybrid) currentVehicle).getPowertrain() == subtype.toUpperCase()) {
+						searchSuccess = true;
+						currentVehicle.toString();
+						System.out.println();
+					}
+				}
+				break;
+			case "5":
+				System.out.println("Enter CargoBeds (SB for Short Beds , EB for Extended Beds, DB for Dump Beds): ");
+				subtype = myObj.nextLine();
+				System.out.println("Matching vehicles:");
+				for(Vehicle currentVehicle : vehicles) {
+					if(((PickupTruck) currentVehicle).getCargoBed() == subtype.toUpperCase()) {
+						searchSuccess = true;
+						currentVehicle.toString();
+						System.out.println();
+					}
+				}
+				break;
+			default:
+				System.out.println("Invalid input. Returning to menu.\n");
+				menu();
+				break;
+			}
 			
+			myObj.close();
+			
+			
+			if (searchSuccess == false) {
+				System.out.println("No vehicle with Vehice Subtype " + userInput);
+			}
+			menu();
 		}
 		private void randomVehicleList() {
 			
