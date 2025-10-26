@@ -129,6 +129,18 @@ public class DriveMastersManager {
 				e.printStackTrace();
 			}
 		}
+		private void purchaseVehicle() {
+			
+		}
+		private void displayByType() {
+					
+				}
+		private void displayBySubtype() {
+			
+		}
+		private void randomVehicleList() {
+			
+		}
 		private void menu() {
 			System.out.println("Welcome to DriveMasters");
 			System.out.println("===============================");
@@ -146,16 +158,16 @@ public class DriveMastersManager {
 			switch (userInput) 
 			{
 			case "1":
-				addMovie();
+				purchaseVehicle();
 				break;
 			case "2":
-				generateMovieListInYear();
+				displayByType();
 				break;
 			case "3":
-				generateRandomMovieList();
+				displayBySubtype();
 				break;
 			case "4":
-				
+				randomVehicleList();
 				break;
 			case "5":
 				saveVehicleList();
