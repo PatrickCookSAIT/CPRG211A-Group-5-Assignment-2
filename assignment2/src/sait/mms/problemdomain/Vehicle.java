@@ -82,12 +82,13 @@ public class Vehicle {
 	}
 	
 	//method for reducing quantity
-	public void vehicleSale() {
+	public boolean vehicleSale() {
 		if (Quantity > 1) {
 			Quantity = Quantity - 1;
+			return true;
 		}
 		else {
-			System.out.println("This vehicle is not currently in stock.");
+			return false;
 		}
 	}
 	
