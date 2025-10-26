@@ -15,7 +15,7 @@ public class Vehicle {
 	
 	private String Drivetrain;
 	//adjust to be .00
-	private double Price;
+	private int Price;
 	private int Quantity;
 	
 	//getters and setters
@@ -74,10 +74,10 @@ public class Vehicle {
 	public void setDrivetrain(String drivetrain) {
 		Drivetrain = drivetrain;
 	}
-	public double getPrice() {
+	public int getPrice() {
 		return Price;
 	}
-	public void setPrice(double price) {
+	public void setPrice(int price) {
 		Price = price;
 	}
 	
