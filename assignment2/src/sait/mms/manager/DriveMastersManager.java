@@ -1,3 +1,5 @@
+//Patrick Cook & Jace Borden 10/26/2025
+//main class that runs all methods
 package sait.mms.manager;
 
 import java.io.*;
@@ -127,6 +129,7 @@ public class DriveMastersManager {
 				e.printStackTrace();
 			}
 		}
+		//asks user for input. Finds input in list then reduces the quantity by one if applicable. Error message if not.
 		private void purchaseVehicle() {
 			boolean searchSuccess = false;
 			Scanner myObj = new Scanner(System.in);
@@ -150,6 +153,8 @@ public class DriveMastersManager {
 			}
 			menu();
 		}
+
+		//searchs all vehicles by the selected type
 		private void displayByType() {
 			boolean searchSuccess = false;
 			Scanner myObj = new Scanner(System.in);
@@ -169,6 +174,8 @@ public class DriveMastersManager {
 			}
 			menu();
 		}
+
+		// first user selects vehicle type then further selects the unique subtype of each vehicle subclass. Prints list for all in subclass
 		private void displayBySubtype() {
 			boolean searchSuccess = false;
 			Scanner myObj = new Scanner(System.in);
@@ -267,6 +274,8 @@ public class DriveMastersManager {
 			}
 			menu();
 		}
+
+		// user selects number of vehicles to include in random list. Random list prints vehicle details
 		private void randomVehicleList() {
 			//gets user to input number of movies they want in a list. selects movies from master list randomly
 			Scanner userInput = new Scanner(System.in);
@@ -287,6 +296,8 @@ public class DriveMastersManager {
 			}
 			menu();
 		}
+
+		//main menu. user inputs selection and the program is directed to proper method
 		private void menu() {
 			System.out.println("Welcome to DriveMasters");
 			System.out.println("===============================");
@@ -327,6 +338,8 @@ public class DriveMastersManager {
 			}
 			
 		}
+
+		//to ensure that the toString of the subclass is selected. Used to generate lists.
 		private void selectToString(Vehicle currentVehicle) {
 			
 			if (currentVehicle instanceof Sedan) {
@@ -349,3 +362,4 @@ public class DriveMastersManager {
 		
 		
 }
+
