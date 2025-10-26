@@ -42,17 +42,15 @@ public class DriveMastersManager {
 					// checks if the first character of the first data point in the file to determine vehicle sub-type
 					// 1 for sedan, 2 for hatchback, 3 for suv, 4 or 5 for hybrid
 					
-					
-					
 				
 					String[] lineData = line.split(";");
+					//test
+					
 					//sedan
 					if (lineData[0].startsWith("1") ) {
 						
 						//CarID 0;VehicleType 1;Subtype 2;Speed 3;Fuel 4;Seats 5;Year 6;Drivetrain 7;Price 8;Quantity 9;TrunkSize 10
-						Sedan newSedan = new Sedan(lineData[0],lineData[1],lineData[2],Integer.parseInt(lineData[3]),Double.parseDouble(lineData[4]),
-								Integer.parseInt(lineData[5]),Integer.parseInt(lineData[6]),lineData[7], 
-								Double.parseDouble(lineData[8]), Integer.parseInt(lineData[9]), lineData[10]);
+						Sedan newSedan = new Sedan(lineData[0],lineData[1],lineData[2],Integer.parseInt(lineData[3]),Double.parseDouble(lineData[4]),Integer.parseInt(lineData[5]),Integer.parseInt(lineData[6]),lineData[7], Integer.parseInt(lineData[8]), Integer.parseInt(lineData[9]), lineData[10]);
 						vehicles.add(newSedan);
 					}
 					//hatchback
@@ -61,7 +59,7 @@ public class DriveMastersManager {
 						//CarID 0;VehicleType 1;Subtype 2;Speed 3;Fuel 4;Seats 5;Year 6;Drivetrain 7;Price 8;Quantity 9;HatchType 10
 						Hatchback newHatchback = new Hatchback(lineData[0],lineData[1],lineData[2],Integer.parseInt(lineData[3]),Double.parseDouble(lineData[4]),
 								Integer.parseInt(lineData[5]),Integer.parseInt(lineData[6]),lineData[7], 
-								Double.parseDouble(lineData[8]), Integer.parseInt(lineData[9]), lineData[10]);
+								Integer.parseInt(lineData[8]), Integer.parseInt(lineData[9]), lineData[10]);
 						vehicles.add(newHatchback);
 					}
 					//suv
@@ -70,7 +68,7 @@ public class DriveMastersManager {
 						//CarID 0;VehicleType 1;Subtype 2;Speed 3;Fuel 4;Seats 5;Year 6;Drivetrain 7;Price 8;Quantity 9
 						SUV newSUV = new SUV(lineData[0],lineData[1],lineData[2],Integer.parseInt(lineData[3]),Double.parseDouble(lineData[4]),
 								Integer.parseInt(lineData[5]),Integer.parseInt(lineData[6]),lineData[7], 
-								Double.parseDouble(lineData[8]), Integer.parseInt(lineData[9]));
+								Integer.parseInt(lineData[8]), Integer.parseInt(lineData[9]));
 						vehicles.add(newSUV);
 					}
 					//hybrid
@@ -79,7 +77,7 @@ public class DriveMastersManager {
 						//CarID 0;VehicleType 1;Subtype 2;Speed 3;Fuel 4;Seats 5;Year 6;Drivetrain 7;Price 8;Quantity 9;Powertrain 10; ElectricRange 11
 						Hybrid newHybrid = new Hybrid(lineData[0],lineData[1],lineData[2],Integer.parseInt(lineData[3]),Double.parseDouble(lineData[4]),
 								Integer.parseInt(lineData[5]),Integer.parseInt(lineData[6]),lineData[7], 
-								Double.parseDouble(lineData[8]), Integer.parseInt(lineData[9]), lineData[10], Integer.parseInt(lineData[11]));
+								Integer.parseInt(lineData[8]), Integer.parseInt(lineData[9]), lineData[10], Integer.parseInt(lineData[11]));
 						vehicles.add(newHybrid);
 					}
 					//pickup
@@ -88,7 +86,7 @@ public class DriveMastersManager {
 						//CarID 0;VehicleType 1;Subtype 2;Speed 3;Fuel 4;Seats 5;Year 6;Drivetrain 7;Price 8;Quantity 9;CargoBed 10; CargoCapacity 11
 						PickupTruck newPickupTruck = new PickupTruck(lineData[0],lineData[1],lineData[2],Integer.parseInt(lineData[3]),Double.parseDouble(lineData[4]),
 								Integer.parseInt(lineData[5]),Integer.parseInt(lineData[6]),lineData[7], 
-								Double.parseDouble(lineData[8]), Integer.parseInt(lineData[9]), lineData[10], Integer.parseInt(lineData[11]));
+								Integer.parseInt(lineData[8]), Integer.parseInt(lineData[9]), lineData[10], Integer.parseInt(lineData[11]));
 						vehicles.add(newPickupTruck);
 					}
 					
@@ -135,8 +133,9 @@ public class DriveMastersManager {
 			Scanner myObj = new Scanner(System.in);
 			System.out.println("Enter CarID: ");
 			String userInput = myObj.nextLine();
-			myObj.close();
+			System.out.println(userInput);
 			for(Vehicle currentVehicle : vehicles) {
+				
 				if(currentVehicle.getCarID() == userInput) {
 					searchSuccess = true;
 					if (currentVehicle.vehicleSale()) {
@@ -251,7 +250,7 @@ public class DriveMastersManager {
 				break;
 			}
 			
-			myObj.close();
+			
 			
 			
 			if (searchSuccess == false) {
@@ -266,7 +265,7 @@ public class DriveMastersManager {
 			int numberOfVehicles = Integer.parseInt(userInput.nextLine());
 			ArrayList<Vehicle> randomVehicleList = vehicles;
 			userInput.close();
-			System.out.println("/nRandom Vehicles:");
+			System.out.println("\nRandom Vehicles:");
 			for(int count = 0; count < numberOfVehicles; count++)
 			{
 				Random rand = new Random();
@@ -289,11 +288,11 @@ public class DriveMastersManager {
 			System.out.println("1.    Purchase Vehicle");
 			System.out.println("2.    Display Vehicles by Type");
 			System.out.println("3.    Display Vehicles by Subtype");
-			System.out.println("4.    Produce a Random List of Vehicles\n");
+			System.out.println("4.    Produce a Random List of Vehicles");
 			System.out.println("5.    Save & Exit\n\n");
 			System.out.println("Enter option:");
 			String userInput = myObj.nextLine();
-			myObj.close();
+			
 			
 			switch (userInput) 
 			{
@@ -318,6 +317,7 @@ public class DriveMastersManager {
 				menu();
 				break;
 			}
+			
 		}
 		
 		
