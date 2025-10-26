@@ -1,5 +1,12 @@
 package sait.mms.application;
 
-public class Driver {
+import sait.mms.manager.DriveMastersManager();
 
+public class Driver {
+	public static void main(String[] args) 
+	{
+		//driver loads movie manager
+		new DriveMastersManager();
+
+	}
 }
