@@ -4,15 +4,15 @@ public class Vehicle {
 	
 	//attributes
 	private String CarID;
-	//enum for vehicle type?
+	
 	private String VehicleType;
 	private String SubType;
 	private int Speed;
 	private double Fuel;
 	private int Seats;
-	//int or string?
+	
 	private int Year;
-	//enum as well?
+	
 	private String Drivetrain;
 	//adjust to be .00
 	private double Price;
