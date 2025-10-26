@@ -24,7 +24,7 @@ public class Hybrid extends Vehicle{
 	//constructor
 	
 	//CarID;VehicleType;Subtype;Speed;Fuel;Seats;Year;Drivetrain;Price;Quantity;PowerTrain ElectricRange;
-	public Hybrid(String CarID, String VehicleType, String SubType, int Speed, double Fuel, int Seats, int Year, String Drivetrain, double Price, int Quantity, String Powertrain, int ElectricRange) {
+	public Hybrid(String CarID, String VehicleType, String SubType, int Speed, double Fuel, int Seats, int Year, String Drivetrain, int Price, int Quantity, String Powertrain, int ElectricRange) {
 		setCarID(CarID);
 		setVehicleType(VehicleType);
 		setSubType(SubType);
@@ -69,3 +69,4 @@ public class Hybrid extends Vehicle{
 	
 	
 }
+
