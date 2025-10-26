@@ -15,7 +15,7 @@ public class Sedan extends Vehicle{
 	//constructor
 	
 	//CarID;VehicleType;Subtype;Speed;Fuel;Seats;Year;Drivetrain;Price;Quantity;TrunkSize
-	public Sedan(String CarID, String VehicleType, String SubType, int Speed, double Fuel, int Seats, int Year, String Drivetrain, double Price, int Quantity, String TrunkSize) {
+	public Sedan(String CarID, String VehicleType, String SubType, int Speed, double Fuel, int Seats, int Year, String Drivetrain, int Price, int Quantity, String TrunkSize) {
 		setCarID(CarID);
 		setVehicleType(VehicleType);
 		setSubType(SubType);
@@ -58,3 +58,4 @@ public class Sedan extends Vehicle{
 	
 	
 }
+
