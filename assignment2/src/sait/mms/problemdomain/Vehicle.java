@@ -14,7 +14,6 @@ public class Vehicle {
 	private int Year;
 	
 	private String Drivetrain;
-	//adjust to be .00
 	private int Price;
 	private int Quantity;
 	
@@ -93,3 +92,4 @@ public class Vehicle {
 	}
 	
 }
+
