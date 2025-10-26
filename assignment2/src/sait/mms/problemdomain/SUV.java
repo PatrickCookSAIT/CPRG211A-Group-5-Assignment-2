@@ -8,7 +8,7 @@ public class SUV extends Vehicle{
 	//constructor
 	
 	//CarID;VehicleType;Subtype;Speed;Fuel;Seats;Year;Drivetrain;Price;Quantity
-	public SUV(String CarID, String VehicleType, String SubType, int Speed, double Fuel, int Seats, int Year, String Drivetrain, double Price, int Quantity) {
+	public SUV(String CarID, String VehicleType, String SubType, int Speed, double Fuel, int Seats, int Year, String Drivetrain, int Price, int Quantity) {
 		setCarID(CarID);
 		setVehicleType(VehicleType);
 		setSubType(SubType);
@@ -33,3 +33,4 @@ public class SUV extends Vehicle{
 	
 	
 }
+
