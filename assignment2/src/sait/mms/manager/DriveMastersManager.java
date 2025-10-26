@@ -130,7 +130,26 @@ public class DriveMastersManager {
 			}
 		}
 		private void purchaseVehicle() {
-			
+			boolean searchSuccess = false;
+			Scanner myObj = new Scanner(System.in);
+			System.out.println("Enter CarID: ");
+			String userInput = myObj.nextLine();
+			myObj.close();
+			for(Vehicle currentVehicle : vehicles) {
+				if(currentVehicle.getCarID() == userInput) {
+					searchSuccess = true;
+					if (currentVehicle.vehicleSale()) {
+						System.out.println("\nThe Vehicle " + currentVehicle.getVehicleType() + " " + currentVehicle.getSubType() + " has been checked out.\n");
+					}
+					else {
+						System.out.println("\nThe Vehicle " + currentVehicle.getVehicleType() + " " + currentVehicle.getSubType() + " has no remaining inventory. No purchase made\n");
+					}
+				}
+			}
+			if (searchSuccess == false) {
+				System.out.println("No vehicle with ID " + userInput);
+			}
+			menu();
 		}
 		private void displayByType() {
 					
@@ -150,8 +169,9 @@ public class DriveMastersManager {
 			System.out.println("1.    Purchase Vehicle");
 			System.out.println("2.    Display Vehicles by Type");
 			System.out.println("3.    Display Vehicles by Subtype");
-			System.out.println("4.    Produce a Random List of Vehicles\n:");
-			System.out.println("5.    Save & Exit\n:");
+			System.out.println("4.    Produce a Random List of Vehicles\n");
+			System.out.println("5.    Save & Exit\n\n");
+			System.out.println("Enter option:");
 			String userInput = myObj.nextLine();
 			myObj.close();
 			
